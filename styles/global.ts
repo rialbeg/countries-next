@@ -28,6 +28,9 @@ export const GlobalStyle = createGlobalStyle`
     	color: ${({ theme }) => theme.text};
 		font-family: 'Nunito Sans', sans-serif;
 	}
+	nav{
+		background: ${({ theme }) => theme.element}
+	}
 	img{ 
 		width:100%;
 	}

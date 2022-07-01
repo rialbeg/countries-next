@@ -1,4 +1,6 @@
 import { ThemeProps } from "../MainComponent";
+import { Container, Content } from "./style";
+import { BsMoon, BsMoonFill } from "react-icons/bs";
 
 interface NavBarProps {
   theme: ThemeProps;
@@ -12,13 +14,18 @@ export function Navbar({ theme }: NavBarProps) {
       : localStorage.setItem("theme", "light");
   };
   return (
-    <div>
-      <p>Where in the world?</p>
-      <div>
-        <a href="#" onClick={toggleTheme}>
-          Dark mode
-        </a>
-      </div>
-    </div>
+    <Container>
+      <Content>
+        <p className="title">Where in the world?</p>
+        <div className="toggle-theme-container">
+          {theme.theme === "light" ? (
+            <BsMoon size={12} />
+          ) : (
+            <BsMoonFill size={12} />
+          )}
+          <p onClick={toggleTheme}>Dark mode</p>
+        </div>
+      </Content>
+    </Container>
   );
 }
