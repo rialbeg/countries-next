@@ -5,7 +5,12 @@ import { darkTheme, GlobalStyle, lightTheme } from "../../styles/global";
 import { MainComponent } from "../components";
 
 function MyApp({ Component, pageProps }: AppProps) {
-  const [theme, setTheme] = useState("light");
+  let item;
+  if (typeof window !== "undefined") {
+    item = localStorage.getItem("theme");
+  }
+
+  const [theme, setTheme] = useState(item);
 
   return (
     <ThemeProvider theme={theme == "light" ? lightTheme : darkTheme}>

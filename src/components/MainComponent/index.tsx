@@ -2,7 +2,7 @@ import { ReactNode } from "react";
 import { Navbar } from "../Navbar";
 
 export interface ThemeProps {
-  theme: string;
+  theme: string | null | undefined;
   setTheme: (theme: string) => void;
 }
 

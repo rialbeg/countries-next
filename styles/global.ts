@@ -1,17 +1,17 @@
 import { createGlobalStyle, DefaultTheme } from "styled-components";
 
 export const lightTheme: DefaultTheme = {
-  body: "#FFF",
-  text: "#363537",
-  toggleBorder: "#FFF",
-  background: "#363537",
+  background: "hsl(0, 0%, 98%)",
+  element: "hsl(0, 0%, 100%)",
+  text: "hsl(200, 15%, 8%)",
+  input: "hsl(0, 0%, 52%)",
 };
 
 export const darkTheme: DefaultTheme = {
-  body: "#363537",
-  text: "#FAFAFA",
-  toggleBorder: "#6B8096",
-  background: "#999",
+  background: "hsl(207, 26%, 17%)",
+  element: "hsl(209, 23%, 22%)",
+  text: "hsl(0, 0%, 100%)",
+  input: "hsl(0, 0%, 100%)",
 };
 
 export const GlobalStyle = createGlobalStyle`
@@ -24,7 +24,7 @@ export const GlobalStyle = createGlobalStyle`
 		font-size:62.5%;
 	}
 	body{
-		background: ${({ theme }) => theme.body};
+		background: ${({ theme }) => theme.background};
     	color: ${({ theme }) => theme.text};
 		font-family: 'Nunito Sans', sans-serif;
 	}

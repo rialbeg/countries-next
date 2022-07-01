@@ -7,6 +7,9 @@ interface NavBarProps {
 export function Navbar({ theme }: NavBarProps) {
   const toggleTheme = () => {
     theme.theme == "light" ? theme.setTheme("dark") : theme.setTheme("light");
+    theme.theme == "light"
+      ? localStorage.setItem("theme", "dark")
+      : localStorage.setItem("theme", "light");
   };
   return (
     <div>
