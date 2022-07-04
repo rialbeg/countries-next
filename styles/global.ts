@@ -18,6 +18,8 @@ export const GlobalStyle = createGlobalStyle`
 	*{
 		padding:0;
 		margin:0;
+	}
+	*,*::before,*::after{
 		box-sizing: border-box;
 	}
 	html{
@@ -33,5 +35,23 @@ export const GlobalStyle = createGlobalStyle`
 	}
 	img{ 
 		width:100%;
+	}
+	div.search-input{
+		background: ${({ theme }) => theme.element};
+	}
+	input{
+		background: ${({ theme }) => theme.element};
+		outline:none;
+		border:none;
+		color: ${({ theme }) => theme.text}
+	}
+	.dropdown-header{
+		background: ${({ theme }) => theme.element};
+	}
+	.dropdown-list-container{
+		background: ${({ theme }) => theme.element};
+	}
+	.country-card{
+		background: ${({ theme }) => theme.element};	
 	}
 `;

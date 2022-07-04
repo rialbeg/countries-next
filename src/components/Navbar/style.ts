@@ -1,6 +1,8 @@
 import styled from "styled-components";
 
-export const Container = styled.nav``;
+export const Container = styled.nav`
+  box-shadow: 0 2px 4px -4px black;
+`;
 
 export const Content = styled.div`
   display: flex;
