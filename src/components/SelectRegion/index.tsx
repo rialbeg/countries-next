@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { SyntheticEvent, useState } from "react";
 import { Country } from "../../pages";
 import {
   DropDownContainer,
@@ -25,18 +25,19 @@ export function SelectRegion({ data }: SelectRegionProps) {
 
   const handleFilterRegionChoice = (value: string) => {
     let result = [];
-    console.log(value);
+
     result = data.countries.filter((data: Country) => {
       return data.region.search(value === "All" ? "" : value) != -1;
     });
-    // console.log(result);
+
     data.setFilteredData(result);
+
     data.setFilteredDataHome(result);
   };
   const onOptionClicked = (option: string) => {
+    handleFilterRegionChoice(option);
     setOptionValue(option);
     setIsOpen(false);
-    handleFilterRegionChoice(option);
   };
 
   const options = ["All", "Africa", "America", "Asia", "Europe", "Oceania"];

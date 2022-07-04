@@ -33,6 +33,7 @@ const Home: NextPage = ({
   const handleFormSubmit = (e: SyntheticEvent) => {
     e.preventDefault();
   };
+
   const handleSearchCountryChange = (event: SyntheticEvent) => {
     const target = event.target as HTMLInputElement;
     let value = target.value.toLowerCase();
@@ -71,16 +72,19 @@ const Home: NextPage = ({
 
       <CountrySection>
         {filteredDataHome.map((country: Country, index: number) => (
-          <CountryCard
-            key={index}
-            country={{
-              flags: { png: country.flags.png },
-              name: country.name,
-              population: country.population,
-              region: country.region,
-              capital: country.capital,
-            }}
-          />
+          <Link href={`/countryinfo/${country.name}`} key={index}>
+            <a>
+              <CountryCard
+                country={{
+                  flags: { png: country.flags.png },
+                  name: country.name,
+                  population: country.population,
+                  region: country.region,
+                  capital: country.capital,
+                }}
+              />
+            </a>
+          </Link>
         ))}
       </CountrySection>
     </Container>

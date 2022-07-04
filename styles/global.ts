@@ -45,6 +45,10 @@ export const GlobalStyle = createGlobalStyle`
 		border:none;
 		color: ${({ theme }) => theme.text}
 	}
+	a{
+		color: ${({ theme }) => theme.text};
+		text-decoration: none;
+	}
 	.dropdown-header{
 		background: ${({ theme }) => theme.element};
 	}
@@ -53,5 +57,9 @@ export const GlobalStyle = createGlobalStyle`
 	}
 	.country-card{
 		background: ${({ theme }) => theme.element};	
+	}
+	.button{
+		background: ${({ theme }) => theme.element};	
+
 	}
 `;
