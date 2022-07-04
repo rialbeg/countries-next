@@ -19,6 +19,7 @@ interface SelectRegionProps {
 
 export function SelectRegion({ data }: SelectRegionProps) {
   const [isOpen, setIsOpen] = useState(false);
+  const [optionValue, setOptionValue] = useState("Filter by Region");
 
   const toggling = () => setIsOpen(!isOpen);
 
@@ -33,15 +34,16 @@ export function SelectRegion({ data }: SelectRegionProps) {
     data.setFilteredDataHome(result);
   };
   const onOptionClicked = (option: string) => {
-    handleFilterRegionChoice(option);
+    setOptionValue(option);
     setIsOpen(false);
+    handleFilterRegionChoice(option);
   };
 
   const options = ["All", "Africa", "America", "Asia", "Europe", "Oceania"];
   return (
     <DropDownContainer>
       <DropDownHeader className="dropdown-header" onClick={toggling}>
-        Filter by Region
+        {optionValue}
       </DropDownHeader>
       {isOpen && (
         <DropDownListContainer className="dropdown-list-container">
