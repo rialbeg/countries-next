@@ -6,6 +6,7 @@ import { SyntheticEvent, useState } from "react";
 import { SelectRegion } from "../components";
 import { getAllCountries } from "../countryApi/apis";
 import { CountryCard } from "../components";
+import Head from "next/head";
 
 export interface Country {
   flags: {
@@ -48,6 +49,9 @@ const Home: NextPage = ({
 
   return (
     <Container>
+      <Head>
+        <title>Country Info</title>
+      </Head>
       <InputSection onSubmit={handleFormSubmit}>
         <div className="search-input">
           <div className="search-content">

@@ -1,4 +1,4 @@
-import { SyntheticEvent, useState } from "react";
+import { useState } from "react";
 import { Country } from "../../pages";
 import {
   DropDownContainer,
@@ -7,6 +7,8 @@ import {
   DropDownListContainer,
   ListItem,
 } from "./style";
+
+import { RiArrowDownSLine, RiArrowUpSLine } from "react-icons/ri";
 
 interface SelectRegionProps {
   data: {
@@ -44,6 +46,8 @@ export function SelectRegion({ data }: SelectRegionProps) {
   return (
     <DropDownContainer>
       <DropDownHeader className="dropdown-header" onClick={toggling}>
+        {isOpen && <RiArrowUpSLine size={20} className="arrow" />}
+        {!isOpen && <RiArrowDownSLine size={20} className="arrow" />}
         {optionValue}
       </DropDownHeader>
       {isOpen && (

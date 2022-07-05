@@ -5,6 +5,11 @@ export const DropDownContainer = styled.div`
   z-index: 99;
   right: 0;
 
+  .arrow {
+    position: absolute;
+    right: 12px;
+    top: 10px;
+  }
   @media (max-width: 565px) {
     left: 0;
     margin-top: 2rem;

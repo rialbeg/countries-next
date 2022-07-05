@@ -21,8 +21,7 @@ import { Button } from "./style";
 import { HiArrowNarrowLeft } from "react-icons/hi";
 import Link from "next/link";
 import Image from "next/image";
-import { useEffect, useState } from "react";
-import { useWidth } from "../../hooks/useWidth";
+import Head from "next/head";
 
 interface Currency {
   name: string;
@@ -44,23 +43,22 @@ export const getStaticProps: GetStaticProps = async (
   context: GetStaticPropsContext
 ) => {
   const name = context?.params?.name;
-
   const countryInfo = await getCountryByName(name);
+  console.log(countryInfo);
   const borderCodes: Promise<any>[] = [];
   const borderNames: string[] = [];
 
-  countryInfo[0].borders?.map((borderCountry: string, index: number) => {
-    borderCodes.push(getCountryByCode(borderCountry));
-  });
+  if (countryInfo[0].hasOwnProperty("borders")) {
+    countryInfo[0]?.borders?.map((borderCountry: string, index: number) => {
+      borderCodes.push(getCountryByCode(borderCountry));
+    });
 
-  const countries = await Promise.all(borderCodes);
-  countries.map((country) => {
-    borderNames.push(country.name);
-  });
-  // console.log(borderNames);
-  // const countryCode = await getCountryByCode(countryInfo[0])
+    const countries = await Promise.all(borderCodes);
+    countries.map((country) => {
+      borderNames.push(country.name);
+    });
+  }
 
-  // console.log(countryInfo);
   return { props: { countryInfo, borderNames } };
 };
 
@@ -68,15 +66,11 @@ export default function CountryInfo({
   countryInfo,
   borderNames,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
-  // const [imgWidth, setImageWidth] = useState(400);
-  // const [imgHeight, setImageHeight] = useState(300);
-  // if (width || 0 <= 450) {
-  //   setImageWidth(300);
-  //   setImageHeight(200);
-  // }
-
   return (
     <Container>
+      <Head>
+        <title>Country Info</title>
+      </Head>
       <Link href="/">
         <Button className="button">
           <HiArrowNarrowLeft />

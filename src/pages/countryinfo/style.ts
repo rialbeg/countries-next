@@ -21,7 +21,8 @@ export const Container = styled.div`
 `;
 
 export const Content = styled.div`
-  margin-top: 5rem;
+  margin-top: 4rem;
+  margin-bottom: 2rem;
   display: flex;
   justify-content: space-evenly;
 
