@@ -62,4 +62,5 @@ export const GlobalStyle = createGlobalStyle`
 		background: ${({ theme }) => theme.element};	
 
 	}
+	
 `;

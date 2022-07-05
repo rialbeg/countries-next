@@ -27,6 +27,15 @@ export const InputSection = styled.form`
         width: 100%;
       }
     }
+    @media (max-width: 565px) {
+      width: 30rem;
+    }
+    @media (max-width: 330px) {
+      width: 23rem;
+    }
+  }
+  @media (max-width: 565px) {
+    display: block;
   }
 `;
 
@@ -39,4 +48,8 @@ export const CountrySection = styled.section`
 
   margin-top: 3rem;
   margin-bottom: 3rem;
+
+  @media (max-width: 565px) {
+    margin-top: 8rem;
+  }
 `;

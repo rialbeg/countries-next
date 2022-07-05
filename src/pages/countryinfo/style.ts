@@ -24,6 +24,11 @@ export const Content = styled.div`
   margin-top: 5rem;
   display: flex;
   justify-content: space-evenly;
+
+  @media (max-width: 830px) {
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 export const CountryInfoContent = styled.div`
   display: flex;
@@ -50,6 +55,12 @@ export const CountryInfoContent = styled.div`
       span {
         font-size: 1.4rem;
         font-weight: 600;
+      }
+    }
+    @media (max-width: 830px) {
+      flex-direction: column;
+      div.column-2 {
+        margin-left: 0;
       }
     }
   }

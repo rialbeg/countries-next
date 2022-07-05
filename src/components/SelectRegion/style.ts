@@ -4,6 +4,11 @@ export const DropDownContainer = styled.div`
   position: absolute;
   z-index: 99;
   right: 0;
+
+  @media (max-width: 565px) {
+    left: 0;
+    margin-top: 2rem;
+  }
 `;
 export const DropDownHeader = styled.div`
   margin-bottom: 1rem;

@@ -21,6 +21,8 @@ import { Button } from "./style";
 import { HiArrowNarrowLeft } from "react-icons/hi";
 import Link from "next/link";
 import Image from "next/image";
+import { useEffect, useState } from "react";
+import { useWidth } from "../../hooks/useWidth";
 
 interface Currency {
   name: string;
@@ -47,7 +49,7 @@ export const getStaticProps: GetStaticProps = async (
   const borderCodes: Promise<any>[] = [];
   const borderNames: string[] = [];
 
-  countryInfo[0].borders.map((borderCountry: string, index: number) => {
+  countryInfo[0].borders?.map((borderCountry: string, index: number) => {
     borderCodes.push(getCountryByCode(borderCountry));
   });
 
@@ -66,6 +68,13 @@ export default function CountryInfo({
   countryInfo,
   borderNames,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
+  // const [imgWidth, setImageWidth] = useState(400);
+  // const [imgHeight, setImageHeight] = useState(300);
+  // if (width || 0 <= 450) {
+  //   setImageWidth(300);
+  //   setImageHeight(200);
+  // }
+
   return (
     <Container>
       <Link href="/">
@@ -76,7 +85,12 @@ export default function CountryInfo({
       </Link>
 
       <Content>
-        <Image src={countryInfo[0].flags.png} width={400} height={300} />
+        <Image
+          layout="intrinsic"
+          src={countryInfo[0].flags.png}
+          width={400}
+          height={300}
+        />
         <CountryInfoContent>
           <h1>{countryInfo[0].name}</h1>
           <div className="country-info-attr">
@@ -109,13 +123,13 @@ export default function CountryInfo({
               </p>
               <p>
                 <span>Currencies: </span>
-                {countryInfo[0].currencies.map(
+                {countryInfo[0]?.currencies?.map(
                   (currency: Currency) => currency.name
                 )}
               </p>
               <p>
                 <span>Languages: </span>
-                {countryInfo[0].languages.map(
+                {countryInfo[0]?.languages?.map(
                   (language: Currency, index: number) => (
                     <label key={index}>{language.name},</label>
                   )
