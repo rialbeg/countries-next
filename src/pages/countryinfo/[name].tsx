@@ -16,8 +16,8 @@ import {
   Content,
   CountryButton,
   CountryInfoContent,
-} from "./style";
-import { Button } from "./style";
+} from "../../../styles/countryInfoStyle";
+import { Button } from "../../../styles/countryInfoStyle";
 import { HiArrowNarrowLeft } from "react-icons/hi";
 import Link from "next/link";
 import Image from "next/image";

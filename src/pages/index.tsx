@@ -1,6 +1,10 @@
 import type { GetStaticProps, InferGetStaticPropsType, NextPage } from "next";
 import Link from "next/link";
-import { Container, CountrySection, InputSection } from "./style";
+import {
+  Container,
+  CountrySection,
+  InputSection,
+} from "../../styles/mainStyle";
 import { BiSearchAlt2 } from "react-icons/bi";
 import { SyntheticEvent, useState } from "react";
 import { SelectRegion } from "../components";

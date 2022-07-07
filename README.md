@@ -34,8 +34,8 @@ Usuários devem ser capazes de:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [github](https://github.com/rialbeg/countries-next)
+- Live Site URL: [vercel]()
 
 ### Executando o app
 
